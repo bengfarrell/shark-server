@@ -1,0 +1,10 @@
+{
+  "name": "shark-server",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "shark-engine": "git+https://git@github.com/shark-attack/shark-engine.git#master",
+    "walk": "^2.3.9"
+  }
+}
