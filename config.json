@@ -16,8 +16,8 @@
   },
   "packaging": {
     "showLocation": "{{applicationStorage}}/shows",
-    "showIntro": "VO_intro.mp3",
-    "showVOBed": "VO_musicbed.mp3",
+    "showIntro": "{{engine}}/media/VO_intro.mp3",
+    "showVOBed": "{{engine}}/media/VO_musicbed.mp3",
     "showDuration": 5400,
     "showName": "SAShow",
     "voFadeInDuration": 5,

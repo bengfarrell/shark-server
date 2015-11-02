@@ -5,6 +5,15 @@ var walk = require('walk');
 
 var routes = {
     init: function(router) {
+        router.get('/run', function(req, res) {
+            var task = req.query.task;
+            switch (task) {
+                case 'package': engine.package.run(); break;
+                case 'discover': engine.discover.run(); break;
+                case 'clean': engine.clean.run(); break;
+            }
+        });
+
         router.get('/media', function(req, res) {
             var channel = req.query.channel;
             getMedia(function(channels) { res.json(channels); }, channel);
