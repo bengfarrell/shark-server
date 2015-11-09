@@ -5,14 +5,14 @@
     "logsDirectory": "{{applicationStorage}}/logs",
     "analyticsDirectory": "{{applicationStorage}}/analytics"
   },
-  "mediaInfoExecutable": "./libs/MediaInfo.exe",
-  "youtubedlExecutable": "./libs/youtube-dl.exe",
-  "ffmpegExecutable": "./libs/ffmpeg.exe",
+  "mediaInfoExecutable": "{{engine}}/libs/MediaInfo.exe",
+  "youtubedlExecutable": "{{engine}}/libs/youtube-dl.exe",
+  "ffmpegExecutable": "{{engine}}/libs/ffmpeg.exe",
   "mediaDirectory": "{{mediaDirectory}}",
   "schedule": {
     "packaging": "at 9:00 pm",
     "cleaning": "at 8:30 pm",
-    "discovery": "at 8:15 am"
+    "discovery": "at 7:00 am"
   },
   "packaging": {
     "showLocation": "{{applicationStorage}}/shows",

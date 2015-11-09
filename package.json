@@ -9,7 +9,6 @@
     "shark-engine": "git+https://git@github.com/shark-attack/shark-engine.git#master",
     "walk": "^2.3.9",
     "webcomponents.js": "^0.7.2",
-    "websockets": "^0.2.0",
     "ws": "^0.8.0"
   }
 }

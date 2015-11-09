@@ -33,7 +33,7 @@
     <div class="logs"></div>
 
     <script>
-        var socket = new WebSocket('ws://localhost:8081');
+        var socket = new WebSocket('ws://' + document.location.hostname + ':8081');
         var logEl = document.querySelector('.logs');
         socket.onopen = function(){
             logEl.innerHTML = '<p>Live connection to server open</p>'
