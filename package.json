@@ -4,10 +4,12 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
-    "shark-engine": "git+https://git@github.com/shark-attack/shark-engine.git#master",
     "sa-analytics": "git+https://git@github.com/shark-attack/sa-analytics.git#master",
     "sa-controlpanel": "git+https://git@github.com/shark-attack/sa-controlpanel.git#master",
+    "shark-engine": "git+https://git@github.com/shark-attack/shark-engine.git#master",
+    "walk": "^2.3.9",
     "webcomponents.js": "^0.7.2",
-    "walk": "^2.3.9"
+    "websockets": "^0.2.0",
+    "ws": "^0.8.0"
   }
 }

@@ -1,9 +1,11 @@
-var express    = require('express');
-var app        = express();
-var bodyParser = require('body-parser');
-var routes     = require('./routes');
-var shark      = require('shark-engine');
-var path       = require('path');
+var express         = require('express');
+var app             = express();
+var bodyParser      = require('body-parser');
+var routes          = require('./routes');
+var shark           = require('shark-engine');
+var path            = require('path');
+var WebSocketServer = require('ws').Server;
+var wsConnection;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -14,11 +16,21 @@ app.use('/shows', express.static(shark.config.packaging.showLocation));
 app.use('/analytics', express.static(shark.config.analytics.root));
 
 var port = process.env.PORT || 8080;
+var wsport = 8081;
 var router = express.Router();
 routes.init(router);
 app.use('/api', router);
 app.listen(port);
 
+wss = new WebSocketServer({port: 8081});
+wss.on('connection', function(ws) {
+    wsConnection = ws;
+    shark.logging.methods.push( function(type, message, detail) {
+        wsConnection.send(JSON.stringify({ type: 'log', logtype: type, message: message, detail: detail }));
+    });
+});
+
 shark.schedule.run();
 
 console.log('Server running on ' + port);
+console.log('Websockets running on ' + wsport);
