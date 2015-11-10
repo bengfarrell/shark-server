@@ -25,7 +25,11 @@ app.listen(port);
 wss = new WebSocketServer({port: 8081});
 wss.on('connection', function(ws) {
     wsConnection = ws;
+    wsConnection.on('close', function() {
+        wsConnection = null;
+    });
     shark.logging.methods.push( function(type, message, detail) {
+        if (!wsConnection) { return; }
         wsConnection.send(JSON.stringify({ type: 'log', logtype: type, message: message, detail: { date: detail.date, level: detail.level } }));
     });
 });
